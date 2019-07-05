@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game cờ caro</title>
+</head>
+<style>
+
+    table {
+        height: 200px;
+        width: 200px;
+    }
+
+    #message {
+        font-size: 50px;
+        font-family: "Amatic SC", cursive;
+    }
+</style>
+
+<div id="message"> message here</div>
+<table border="2">
+    <tr>
+        <td class="square" onclick="nextMove(this)"></td>
+        <td class="square" onclick="nextMove(this)"></td>
+        <td class="square" onclick="nextMove(this)"></td>
+
+    </tr>
+    <tr>
+        <td class="square" onclick="nextMove(this)"></td>
+        <td class="square" onclick="nextMove(this)"></td>
+        <td class="square" onclick="nextMove(this)"></td>
+    </tr>
+    <tr>
+        <td class="square" onclick="nextMove(this)"></td>
+        <td class="square" onclick="nextMove(this)"></td>
+        <td class="square" onclick="nextMove(this)"></td>
+    </tr>
+</table>
+<body onload="startGame();">
+<script>
+    function startGame() {
+        document.turn = "x";
+    }
+
+    function nextMove(square) {
+        square.innerText = document.turn;
+        switchTurn();
+    }
+
+    function switchTurn() {
+        if (document.turn == "x") {
+            document.turn = "o";
+        } else {
+            document.turn = "x";
+        }
+    }
+
+</script>
+</body>
+</html>
